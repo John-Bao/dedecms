@@ -1,0 +1,11 @@
+*.DS_Store
+/website/runtime
+/website/config/db.php
+/nbproject/private/
+/nbproject
+/.idea
+/.settings
+/.buildpath
+/.project
+/website/config/admin.php
+/ydxs.iml
