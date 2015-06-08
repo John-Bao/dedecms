@@ -195,11 +195,11 @@ if($cid != 0)
 if($arcrank != '')
 {
     $whereSql .= " AND arc.arcrank = '$arcrank' ";
-    $CheckUserSend = "<input type='button' class='coolbg np' onClick=\"location='catalog_do.php?cid=".$cid."&dopost=listArchives&gurl=content_list.php';\" value='所有文档' />";
+    $CheckUserSend = "<input style='background: url(images/inputbg1.gif); width:68px; height:25px; border:none; color:#fff;' type='button' class='coolbg np' onClick=\"location='catalog_do.php?cid=".$cid."&dopost=listArchives&gurl=content_list.php';\" value='所有文档'  />";
 }
 else
 {
-    $CheckUserSend = "<input type='button' class='coolbg np' onClick=\"location='catalog_do.php?cid=".$cid."&dopost=listArchives&arcrank=-1&gurl=content_list.php';\" value='稿件审核' />";
+    $CheckUserSend = "<input style='background: url(images/inputbg1.gif); width:68px; height:25px; border:none; color:#fff;' type='button' class='coolbg np' onClick=\"location='catalog_do.php?cid=".$cid."&dopost=listArchives&arcrank=-1&gurl=content_list.php';\" value='未审核' />";
 }
 
 $orderby = empty($orderby) ? 'id' : preg_replace("#[^a-z0-9]#", "", $orderby);

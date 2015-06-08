@@ -65,7 +65,7 @@ if($action=='upload')
         {
             unlink($tmpfilename);
             $dm->Clear();
-            ShowMsg("对不起，你上传的文件可能不是织梦模块的标准格式文件！<br /><br /><a href='javascript:history.go(-1);'>&gt;&gt;返回重新上传&gt;&gt;</a>","javascript:;");
+            ShowMsg("对不起，你上传的文件可能不是三石磊工作室模块的标准格式文件！<br /><br /><a href='javascript:history.go(-1);'>&gt;&gt;返回重新上传&gt;&gt;</a>","javascript:;");
             exit();
         }
         $okfile = $mdir.'/'.$infos['hash'].'.xml';
@@ -121,3 +121,4 @@ else
     exit();
 }
 //ClearAllLink();
+

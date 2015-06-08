@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8 echo $cfg_soft_lang; ?>">
 <title>栏目管理</title>
 <link href="css/base.css" rel="stylesheet" type="text/css">
 <script language="javascript">
@@ -171,8 +171,8 @@ function CheckCross()
            <table border="0" cellpadding="0" cellspacing="0">
                 <tr>
                   <td width="84" height="24" align="center" background="images/itemnote1.gif">&nbsp;常规选项&nbsp;</td>
-                  <td width="84" align="center" background="images/itemnote2.gif"><a href="#" onClick="ShowItem2()"><u>高级选项</u></a>&nbsp;</td>
-                  <td width="84" align="center" background="images/itemnote2.gif"><a href="#" onClick="ShowItem3()"><u>栏目内容</u></a>&nbsp;</td>
+                  <td width="84" align="center" background="images/itemnote2.gif"><a href="#" onClick="ShowItem2()" style="color:#fff;">高级选项</a>&nbsp;</td>
+                  <td width="84" align="center" background="images/itemnote2.gif"><a href="#" onClick="ShowItem3()" style="color:#fff;">栏目内容</a>&nbsp;</td>
                 </tr>
               </table>
             </td>
@@ -184,9 +184,9 @@ function CheckCross()
             <td colspan="2" bgcolor="#FFFFFF"  style="text-align:left;">
           <table height="24" border="0" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td width="84" align="center" background="images/itemnote2.gif" bgcolor="#F2F7DF"><a href="#" onClick="ShowItem1()"><u>常规选项</u></a>&nbsp;</td>
+                  <td width="84" align="center" background="images/itemnote2.gif" bgcolor="#F2F7DF"><a href="#" onClick="ShowItem1()" style="color:#fff;">常规选项</a>&nbsp;</td>
                   <td width="84" align="center" background="images/itemnote1.gif">高级选项&nbsp;</td>
-                  <td width="84" align="center" background="images/itemnote2.gif"><a href="#" onClick="ShowItem3()"><u>栏目内容</u></a>&nbsp;</td>
+                  <td width="84" align="center" background="images/itemnote2.gif"><a href="#" onClick="ShowItem3()" style="color:#fff;">栏目内容</a>&nbsp;</td>
                 </tr>
               </table>
             </td>
@@ -198,18 +198,18 @@ function CheckCross()
             <td colspan="2" bgcolor="#FFFFFF" style="text-align:left;">
              <table height="24" border="0" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td width="84" align="center" background="images/itemnote2.gif" bgcolor="#F2F7DF"><a href="#" onClick="ShowItem1()"><u>常规选项</u></a>&nbsp;</td>
-                  <td width="84" align="center" background="images/itemnote2.gif"><a href="#" onClick="ShowItem2()"><u>高级选项</u>&nbsp;</td>
+                  <td width="84" align="center" background="images/itemnote2.gif" bgcolor="#F2F7DF"><a href="#" onClick="ShowItem1()" style="color:#fff;">常规选项</a>&nbsp;</td>
+                  <td width="84" align="center" background="images/itemnote2.gif"><a href="#" onClick="ShowItem2()" style="color:#fff;">高级选项&nbsp;</td>
                   <td width="84" align="center" background="images/itemnote1.gif">栏目内容&nbsp;</td>
                 </tr>
               </table>
             </td>
           </tr>
        </table>
-        <table width="100%" border="0"  id="needset" cellspacing="0" cellpadding="0" style="text-align:left;border:1px solid #cfcfcf;background:#ffffff;">
+        <table width="100%" border="0"  id="needset" cellspacing="0" cellpadding="0" style="text-align:left;border:1px solid #fff;background:#ffffff;">
           <tr>
-            <td width="150" class='bline' height="26" style="padding-left:10px;">是否支持投稿：</td>
-            <td class='bline'>
+            <td width="150" class='bline55' height="26" style="padding-left:10px;">是否支持投稿：</td>
+            <td class='bline55'>
                 <input type='radio' name='issend' value='0' class='np' <?php if($issend==0) echo " checked='checked' ";?> />
               不支持&nbsp;
               <input type='radio' name='issend' value='1' class='np' <?php if($issend==1) echo " checked='checked' ";?> />
@@ -217,8 +217,8 @@ function CheckCross()
              </td>
           </tr>
           <tr>
-            <td width="150" class='bline' height="26" style="padding-left:10px;">是否隐藏栏目：</td>
-            <td class='bline'>
+            <td width="150" class='bline55' height="26" style="padding-left:10px;">是否隐藏栏目：</td>
+            <td class='bline55'>
                 <input type='radio' name='ishidden' value='0' class='np' checked="checked" />
               显示　&nbsp;
               <input type='radio' name='ishidden' value='1' class='np' />
@@ -226,8 +226,8 @@ function CheckCross()
              </td>
           </tr>
           <tr>
-            <td class='bline' height="26" style="padding-left:10px;"><font color='red'>内容模型：</font></td>
-            <td class='bline'>
+            <td class='bline55' height="26" style="padding-left:10px;"><font color='red'>内容模型：</font></td>
+            <td class='bline55'>
                 
            <select name="channeltype" id="channeltype" style="width:200px" onChange="ParTemplet(this)">
             <?php
@@ -247,17 +247,17 @@ function CheckCross()
             </td>
           </tr>
           <tr>
-            <td class='bline' height="26" style="padding-left:10px;"><font color='red'>栏目名称：</font></td>
-            <td class='bline'><input name="typename" type="text" id="typename" size="30" class="iptxt" /></td>
+            <td class='bline55' height="26" style="padding-left:10px;"><font color='red'>栏目名称：</font></td>
+            <td class='bline55'><input name="typename" type="text" id="typename" size="30" class="iptxt" /></td>
           </tr>
           <tr>
-            <td class='bline' height="26" style="padding-left:10px;"> 排列顺序： </td>
-            <td class='bline'><input name="sortrank" size="6" type="text" value="50" class="pubinputs" style="width:60px" />
+            <td class='bline55' height="26" style="padding-left:10px;"> 排列顺序： </td>
+            <td class='bline55'><input name="sortrank" size="6" type="text" value="50" class="pubinputs" style="width:60px" />
               （由低 -&gt; 高） </td>
           </tr>
           <tr>
-            <td class='bline' height="26" style="padding-left:10px;">浏览权限：</td>
-            <td class='bline'>
+            <td class='bline55' height="26" style="padding-left:10px;">浏览权限：</td>
+            <td class='bline55'>
                 <select name="corank" id="corank" style="width:100px">
                 <?php
               $dsql->SetQuery("Select * from `#@__arcrank` where rank >= 0");
@@ -277,8 +277,8 @@ function CheckCross()
               (仅限制栏目里的文档浏览权限) </td>
           </tr>
           <tr>
-            <td class='bline' height="26" style="padding-left:10px;">上级目录：</td>
-            <td class='bline'>
+            <td class='bline55' height="26" style="padding-left:10px;">上级目录：</td>
+            <td class='bline55'>
                 <?php
                     $pardir = '{cmspath}'.$cfg_arcdir;
                     if(!empty($typedir)) $pardir = $typedir.'/';
@@ -305,8 +305,8 @@ function CheckCross()
               </td>
           </tr>
           <tr>
-            <td class='bline' height="26" style="padding-left:10px;">目录相对位置：</td>
-            <td class='bline'>
+            <td class='bline55' height="26" style="padding-left:10px;">目录相对位置：</td>
+            <td class='bline55'>
                     <input name="referpath" type="radio" id="truepath1" class="np" value="parent" checked="chekced" />
               上级目录
               <?php
@@ -332,14 +332,14 @@ function CheckCross()
             </td>
           </tr>
           <tr>
-            <td height="26" class='bline' style="padding-left:10px;">默认页的名称： </td>
-            <td class='bline'>
+            <td height="26" class='bline55' style="padding-left:10px;">默认页的名称： </td>
+            <td class='bline55'>
             <input name="defaultname" type="text" value="index.html" class="iptxt" />
             </td>
           </tr>
           <tr>
-            <td height="26" class='bline' style="padding-left:10px;">栏目属性：</td>
-            <td class='bline'>
+            <td height="26" class='bline55' style="padding-left:10px;">栏目属性：</td>
+            <td class='bline55'>
                 <input name="ispart" type="radio" id="radio" value="0" class='np' checked="checked"/>
               最终列表栏目（允许在本栏目发布文档，并生成文档列表） <br>
               <input name="ispart" type="radio" id="radio" value="1" class='np'/>
@@ -370,8 +370,8 @@ function CheckCross()
             </td>
           </tr>
           <tr id='smclass' style='<?php echo ($channelid<0 ? '' : 'display:none'); ?>'>
-            <td class='bline' style="padding-left:10px;">绑定小分类：  <br />仅适用[分类信息模型]</td>
-            <td class='bline' style="padding:3px 0px 3px 0px">
+            <td class='bline55' style="padding-left:10px;">绑定小分类：  <br />仅适用[分类信息模型]</td>
+            <td class='bline55' style="padding:3px 0px 3px 0px">
                 <select name='smalltype[]' size='5' style='width:120px' multiple='yes'>
                     <?php
                     $sql = "SELECT * FROM `#@__sys_enum` WHERE egroup LIKE 'infotype' ORDER BY disorder ASC, id DESC ";
@@ -402,8 +402,8 @@ function CheckCross()
           {
           ?>
           <tr>
-            <td class='bline' width="150" height="24" style="padding-left:10px;">多站点支持：</td>
-            <td class='bline'>
+            <td class='bline55' width="150" height="24" style="padding-left:10px;">多站点支持：</td>
+            <td class='bline55'>
             <input name="moresite" type="radio"  class="np" value="0" checked="checked"/>
               不启用
               <input type="radio" name="moresite" class="np" value="1"/>
@@ -415,15 +415,15 @@ function CheckCross()
             <td bgcolor="#F3F7EA">如果需要绑定二级域名，必须在“系统参数”中设定“支持多站点”。</td>
           </tr>
           <tr>
-            <td class='bline' height="24" style="padding-left:10px;">绑定域名：</td>
-            <td class='bline'>
+            <td class='bline55' height="24" style="padding-left:10px;">绑定域名：</td>
+            <td class='bline55'>
                 <input name="siteurl" type="text" id="siteurl" size="35" onChange="CheckPathSet();" class="pubinputs" />
               (需加 http://，一级或二级域名的根网址)
             </td>
           </tr>
           <tr>
-            <td class='bline' height="24" style="padding-left:10px;">站点根目录：</td>
-            <td class='bline'>
+            <td class='bline55' height="24" style="padding-left:10px;">站点根目录：</td>
+            <td class='bline55'>
                 为简化操作，站点根目录与当前栏目目录一致，请注意当前栏目文件保存目录的设置，域名需自行手工绑定到这个目录。
             </td>
           </tr>
@@ -529,13 +529,13 @@ function CheckCross()
           </tr>
       </table>
 
-          <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#F9FCEF" style="border:1px solid #cfcfcf;border-top:none;">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0" >
           <tr>
             <td width="1%" height="35"></td>
             <td width="99%" valign="bottom">
-<input name="imageField" type="image" src="images/button_ok.gif" width="60" height="22" border="0" class="np" />
+<input name="imageField" type="image" src="images/button_ok.gif" border="0" height="30" width="60"class="np" />
 &nbsp;&nbsp;&nbsp;
-            <a href="catalog_main.php"><img src="images/button_back.gif" width="60" height="22" border="0" /></a>
+            <a href="catalog_main.php"><img src="images/button_back.gif" border="0" /></a>
             </td>
           </tr>
         </table></td>
@@ -544,3 +544,4 @@ function CheckCross()
 </table>
 </body>
 </html>
+

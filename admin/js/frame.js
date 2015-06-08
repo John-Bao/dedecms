@@ -27,7 +27,7 @@ $(function(){
 			}
 			else
 			{
-				$(".scroll").html("无法读取织梦官方消息");
+				$(".scroll").html("无法读取三石磊工作室官方消息");
 			}
 		});
 		*/
@@ -67,10 +67,10 @@ function LeftMenuToggle(){//左侧菜单开关
 		$("#togglemenu").click(function(){
 			if($("body").attr("class")=="showmenu"){
 				$("body").attr("class","hidemenu");
-				$(this).html("显示菜单");
+				$(this).html("<img src='images/b2.jpg' border='0'>");
 			}else{
 				$("body").attr("class","showmenu");
-				$(this).html("隐藏菜单");
+				$(this).html("<img src='images/b1.jpg' border='0'>");
 			}
 		});
 	}
@@ -166,3 +166,4 @@ function initializeIT()
 	
 
 	
+

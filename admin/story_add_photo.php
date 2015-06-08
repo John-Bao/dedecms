@@ -57,3 +57,4 @@ $bcatid = $bookinfos['bcatid'];
 $bookname = $bookinfos['bookname'];
 $booktype = $bookinfos['booktype'];
 require_once DedeInclude('/templets/story_add_photo.htm');
+

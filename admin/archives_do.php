@@ -811,8 +811,8 @@ else if($dopost=="makekw")
         }
 
         $description = str_replace('　', ' ', trim($description));
-        $description = str_replace('［', ' ', $description);
-        $description = str_replace('］', ' ', $description);
+        $description = str_replace('〔', ' ', $description);
+        $description = str_replace('〕', ' ', $description);
         $description = preg_replace("#[ \r\n\t]{1,}#is", ' ', $description);
         $description = str_replace('关键字', '', $description);
         $description = str_replace('关键词', '', $description);

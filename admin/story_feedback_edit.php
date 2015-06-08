@@ -28,3 +28,4 @@ if($dopost=='edit')
 $query = "SELECT * FROM `#@__bookfeedback` WHERE id=$id";
 $row = $dsql->GetOne($query);
 include DedeInclude('templets/story_feedback_edit.htm');
+

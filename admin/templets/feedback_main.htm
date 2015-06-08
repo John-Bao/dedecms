@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8 echo $cfg_soft_lang; ?>">
 <title>评论管理</title>
 <script language='javascript'>
 //获得选中文件的文件名
@@ -74,11 +74,11 @@ function editFeedback()
 <link href="css/base.css" rel="stylesheet" type="text/css">
 </head>
 <body background='images/allbg.gif' leftmargin='8' topmargin='8'>
-<table width="98%" border="0" cellpadding="3" align="center" cellspacing="1" bgcolor="#D6D6D6">
+<table width="98%" border="0" cellpadding="3" align="center" cellspacing="0" bgcolor="#D6D6D6">
 <tr>
-<td height="28" background='images/tbg.gif' style="padding-left:10px;">
+<td height="28"  style=" background:#fff; padding-left:10px;">
 <div style="float:left;">
-	<a href='feedback_main.php'><u><b>评论管理</b></u></a>
+	<a href='feedback_main.php' style="font-size:16px; color:#4B8200; font-weight:bold;">评论管理</a>
 </div>
 <div style="float:right;padding-right:10px">
 <form name='form1'>
@@ -100,24 +100,25 @@ function editFeedback()
 {dede:datalist}
 <tr height='25'> 
 <td>
-<table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#EEF7D2">
-<tr bgcolor="#F4FAE4"> 
-<td width="9%">
-	&nbsp;选择 <input name="fid" type="checkbox" class="np" id="fid" value="{dede:field.id/}"> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#EEF3F7">
+<tr bgcolor="#EEF3F7"> 
+<td width="3%">
+	<input name="fid" type="checkbox" class="np" id="fid" value="{dede:field.id/}"> 
 </td>
-<td width="12%">
+
+<td width="56%">
+	<a href='feedback_main.php?aid={dede:field.aid/}'>{dede:field.arctitle/}</a>&nbsp;&nbsp; <a href="{dede:global.cfg_phpurl /}/view.php?aid={dede:field.aid/}" target="_blank" style="color:#4B8200;">【浏览】</a>
+</td>
+<td width="8%">
 	用户：{dede:field.username/}
 </td>
-<td width="30%">
-	文档：<a href='feedback_main.php?aid={dede:field.aid/}'><u>{dede:field.arctitle function="RemoveXSS(@me)"/}</u></a> (<a href="{dede:global.cfg_phpurl /}/view.php?aid={dede:field.aid/}" target="_blank"><u>浏览</u></a>)
+<td width="12%" align="center">
+	<a href='feedback_main.php?ip={dede:field.ip/}'>{dede:field.ip/}</a>
 </td>
-<td width="18%" align="center">
-	IP地址：<a href='feedback_main.php?ip={dede:field.ip/}'><u>{dede:field.ip/}</u></a>
+<td width="15%">
+	{dede:field.dtime function="GetDateTimeMK(@me)" /}
 </td>
-<td width="21%">
-	时间：{dede:field.dtime function="GetDateTimeMK(@me)" /}
-</td>
-<td width="10%" align="center">
+<td width="6%" align="center">
 	<a href='feedback_edit.php?id={dede:field.id/}'><img src="images/feedback-edit.gif" border="0" width="45" height="18"></a>
 </td>
 </tr>
@@ -125,9 +126,9 @@ function editFeedback()
 <td height="28" colspan="6">
 	<table width="98%" border="0" cellspacing="0" cellpadding="0">
 <tr> 
-<td align="left">
+<td align="left" style="padding:15px; color:#888;">
 {dede:field.ischeck function="IsCheck(@me)" /}
-{dede:field.msg function='cn_substr(Text2Html(@me), 50)'/}
+{dede:field.msg function='cn_substr(Text2Html(@me), 10000)'/}
 </td>
 </tr>
 </table></td>

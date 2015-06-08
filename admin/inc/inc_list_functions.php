@@ -54,7 +54,7 @@ function IsCommendArchives($iscommend)
     }
     $sn = trim($sn);
     if($sn=='') return '';
-    else return "[<font color='red'>$sn</font>]";
+    else return "<span style='color:#E06403'>[$sn]</span>";
 }
 
 //获得推荐的标题

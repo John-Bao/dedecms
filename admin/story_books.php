@@ -83,3 +83,4 @@ $dlist->SetParameter("orderby", $orderby);
 $dlist->SetTemplate(DEDEADMIN. '/templets/story_books.htm');
 $dlist->SetSource($query);
 $dlist->Display();
+

@@ -19,3 +19,4 @@ require(DEDEADMIN.'/inc/inc_menu_map.php');
 include(DEDEADMIN.'/templets/index2.htm');
 exit();
 
+

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8 echo $cfg_soft_lang; ?>">
 <title>上传新文件</title>
 <link href="css/base.css" rel="stylesheet" type="text/css" />
 <style>
@@ -45,13 +45,13 @@ function ResetUpload()
 </script>
 </head>
 <body background="images/allbg.gif" leftmargin='8' topmargin='8'>
-<table width="98%" align="center" border="0" cellpadding="3" cellspacing="1" bgcolor="#D6D6D6">
+<table width="98%" align="center" border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
   <tr> 
-    <td height="28" background='images/tbg.gif'>
+    <td height="28" >
     	<table width="98%" border="0" cellpadding="0" cellspacing="0">
         <tr> 
           <td width="2%" align="center" valign="middle"><img src="images/item_tt2.gif" width="7" height="15" /></td>
-          <td width="44%"><strong>上传新文件：</strong></td>
+          <td width="44%"><strong style="font-size:16px; color:#467A00;">上传新文件</strong></td>
           <td width="54%" align="right">[<a href='media_main.php'><u>附件/媒体数据管理</u></a>]</td>
         </tr>
       </table>
@@ -59,13 +59,13 @@ function ResetUpload()
   </tr>
   <tr> 
     <td height="19" bgcolor="#ffffff">
-    	 <img src="images/help.gif" border="0" />
-    	提示：图片类型仅支持jpg、png、gif、wbmp格式，flash为.swf格式，视音频和附件为限定扩展名的类型(可在系统参数中修改)。
+    	 
+    	<div style="background:#FFFCED; border:1px solid #FFBE7A; padding:5px 10px;">提示：图片类型仅支持jpg、png、gif、wbmp格式，flash为.swf格式，视音频和附件为限定扩展名的类型(可在系统参数中修改)。</div>
     </td>
   </tr>
   <tr> 
-    <td height="69" align="center" valign="top" bgcolor="#FFFFFF">
-    	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <td align="center" valign="top">
+    	<table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding:15px 0;">
         <form enctype="multipart/form-data" name='form1' action="media_add.php" method="POST" onSubmit="return CheckSubmit();">
           <input type="hidden" name="dopost" value="upload" />
           <tr> 

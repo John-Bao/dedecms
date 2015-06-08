@@ -1,12 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
-<title>DedeCms Home</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8 echo $cfg_soft_lang; ?>">
+<title>ifc Home</title>
 <base target="_self">
 <link rel="stylesheet" type="text/css" href="css/base.css" />
 <link rel="stylesheet" type="text/css" href="css/indexbody.css" />
 <link href="images/style<?php echo $cfg_admin_skin;?>/style.css" rel="stylesheet" type="text/css" />
+
 <script language="javascript" src="../include/js/dedeajax2.js"></script>
 <script type="text/javascript" src="../include/js/jquery/jquery.js" ></script>
 <script language="javascript" src="../include/js/jquery/ui.core.js"></script>
@@ -33,6 +34,57 @@ $(function()
   })
 })
 </script>
+<style type="text/css">
+.kuaibtn{
+	height:100px;
+	width:97%;
+	margin-left:8px;}
+	
+	.kuaibtn a{
+		display:block;
+		width:103px;
+		height:99px;
+		background:#eee;
+		float:left;
+		margin-right:8px;}
+	
+	.kuaibtn .k1{
+		background:url(images/bbbbb_r2_c2.jpg);}
+		
+		.kuaibtn .k1:hover{
+		background:url(images/ccccc_r2_c2.jpg);}
+		
+	.kuaibtn .k2{
+		background:url(images/bbbbb_r2_c4.jpg);}
+		
+		.kuaibtn .k2:hover{
+		background:url(images/ccccc_r2_c4.jpg);}
+		
+	.kuaibtn .k3{
+		background:url(images/bbbbb_r2_c6.jpg);}
+		
+		.kuaibtn .k3:hover{
+		background:url(images/ccccc_r2_c6.jpg);}
+		
+	.kuaibtn .k4{
+		background:url(images/bbbbb_r2_c8.jpg);}
+		
+		.kuaibtn .k4:hover{
+		background:url(images/ccccc_r2_c8.jpg);}
+		
+	.kuaibtn .k5{
+		background:url(images/bbbbb_r2_c10.jpg);}
+		
+		.kuaibtn .k5:hover{
+		background:url(images/ccccc_r2_c10.jpg);}
+		
+	.kuaibtn .k6{
+		background:url(images/bbbbb_r2_c12.jpg);}
+		
+		.kuaibtn .k6:hover{
+		background:url(images/ccccc_r2_c12.jpg);}
+
+</style>
 </head>
 <body leftmargin="8" topmargin='8' bgcolor="#FFFFFF">
 <div style="min-width:780px">
@@ -47,14 +99,30 @@ $(function()
      </div>
    </td>
   </tr>
-  <tr>
-    <td height="1" background="images/sp_bg.gif" style='padding:0px'></td>
-  </tr>
 </table>
+<div>
+<map name="Map" id="Map">
+    <area shape="rect" coords="17,10,109,105" href="catalog_do.php?channelid=0&cid=0&dopost=addArchives" />
+	<area shape="rect" coords="133,7,234,107" href="content_list.php" />
+	<area shape="rect" coords="256,7,356,106" href="sys_admin_user.php" />
+	<area shape="rect" coords="372,7,473,106" href="media_main.php" />
+	<area shape="rect" coords="489,7,588,105" href="feedback_main.php" />
+    <area shape="rect" coords="601,8,703,106" href="sys_info.php" />
+	<area shape="rect" coords="717,8,826,106" href="#" onclick="#" /></map>
+</div>
+
+<div class="kuaibtn">
+	<a href="catalog_do.php?channelid=0&cid=0&dopost=addArchives" title="" class="k1"></a>
+	<a href="content_list.php" title="" class="k2"></a>
+	<a href="sys_admin_user.php" title="" class="k3"></a>
+	<a href="media_main.php" title="" class="k4"></a>
+	<a href="feedback_main.php" title="" class="k5"></a>
+	<a href="sys_info.php" title="" class="k6"></a>
+</div>
 <div id="__testEvn"></div>
 <div id='mainmsg'>
   <div class="column" id="column1"><!--左侧开始-->    
-        <dl class="dbox" id="item1">
+       <!-- <dl class="dbox" id="item1">
             <dt class='lside'><span class='l'><?php echo $cfg_soft_enname; ?> 更新消息</span></dt>
             <dd>
                 <div id='updatetest'>
@@ -68,8 +136,54 @@ $(function()
                     </div>
                  </div>
             </dd>
-        </dl><!--更新消息结束-->        
-        <dl class='dbox' id="item2">
+        </dl><!--更新消息结束-->   
+		<dl class='dbox' id="item7">
+            <dt class='lside'><div class='l'>最新文档</div></dt>
+            <dd id='listNews'>
+<?php
+    $query = "SELECT arc.id, arc.arcrank, arc.title, arc.channel, ch.editcon  FROM `#@__archives` arc
+            LEFT JOIN `#@__channeltype` ch ON ch.id = arc.channel
+             WHERE arc.arcrank<>-2 ORDER BY arc.id DESC LIMIT 0, 6 ";
+    $arcArr = array();
+    $dsql->Execute('m', $query);
+    while($row = $dsql->GetArray('m'))
+    {
+        $arcArr[] = $row;
+    }
+?>
+    <table width="100%" class="dboxtable">
+    <?php
+    if(count($arcArr) > 1)
+    {
+        foreach($arcArr as $row)
+        {
+            if(trim($row['editcon'])=='') {
+                $row['editcon'] = 'archives_edit.php';
+            }
+            $linkstr = "·<a href='{$row['editcon']}?aid={$row['id']}&channelid={$row['channel']}'>{$row['title']}</a>";
+            if($row['arcrank']==-1) $linkstr .= "<font color='red'>(未审核)</font>";
+        ?>
+        <tr>
+            <td class='nline'  style="text-align:left; padding-left:15px;">
+                <?php echo $linkstr; ?>
+            </td>
+        </tr>
+        <?php
+        }
+    } else {
+    ?>
+        <tr>
+            <td class='nline'  style="text-align:left">
+                暂无新增内容
+            </td>
+        </tr>
+    <?php
+    }
+    ?>
+    </table>
+            </dd>
+        </dl><!--最新文档结束-->     
+        <!--<dl class='dbox' id="item2">
             <dt class='lside'><span class='l'>商业授权查询</span></dt>
             <dd>               
                 <iframe name="showauth" src="index_body.php?dopost=showauth" width="100%" frameborder="0" scrolling="no" marginwidth="10" marginheight="10" id="showauth"></iframe>                
@@ -99,6 +213,36 @@ $(function()
             </dd>
 
         </dl><!--快捷操作结束-->   
+        
+        <!--<dl class='dbox' id="item5">
+            <dt class='lside'><div class='l'>程序团队</div></dt>
+            <dd class='intable'>
+                <table width="98%" class="dboxtable">
+                    <tr>
+                        <td width='25%' height='36' class='nline' style="text-align:right"> 主程序研发： </td>
+                        <td class='nline' style="text-align:left"><a href="http://www.desdev.cn/team.php" target="_blank" style="color:blue">三石磊工作室团队</a></td>
+                    </tr>
+                    <tr>
+                        <td height='36' class='nline' style="text-align:right">鸣谢：</td>
+                        <td class='nline' style="text-align:left"><a href="http://www.desdev.cn/dedecms-thanks.html" target="_blank" style="color:blue">热心用户</a>、<a href="http://www.dedecms.com/thanks.html" target="_blank" style="color:blue">赞助商</a></td>
+                    </tr>
+                </table>
+            </dd>
+        </dl><!--开发团队结束-->
+    </div><!--左侧结束-->
+    <div class="column" id="column2" ><!-- //右边的快捷消息开始 -->
+        <!--<dl class='dbox' id="item8">
+            <dt class='lside'><div class='l'>赞助商链接(<a href="http://ad.dedecms.com/ad/" target="_blank">说明</a>)</div></dt>
+            <dd>
+                <iframe name="showad" src="index_body.php?dopost=showad" frameborder="0" width="100%" id="showad" frameborder="0" scrolling="no"  marginheight="5"></iframe>
+            </dd>
+        </dl><!--赞助商链接结束-->
+        <dl class='dbox' id="item6">
+            <dt class='lside'><div class='l'>信息统计</div></dt>
+            <dd id='listCount'>
+                正在载入中...
+            </dd>
+        </dl><!--信息统计结束-->
         <dl class="dbox" id="item4">
             <dt class='lside'><div class='l'>系统基本信息</div></dt>
             <dd class='intable'>
@@ -115,7 +259,7 @@ $(function()
                                 echo "信息采集员或其它管理员";
                             }
                         ?>
-                        [<a href="javascript:showMore()">查看更多</a>]</td>
+                        [<a href="javascript:showMore(allInfoTD)">查看更多</a>]</td>
                     </tr>
                     <tr>
                      <td colspan="2" class='nline' id="allInfoTD" style="display:none"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="allInfo" style="display:none">
@@ -175,87 +319,12 @@ $(function()
                 </table>
             </dd>
         </dl><!--系统基本信息结束-->
-        <dl class='dbox' id="item5">
-            <dt class='lside'><div class='l'>程序团队</div></dt>
-            <dd class='intable'>
-                <table width="98%" class="dboxtable">
-                    <tr>
-                        <td width='25%' height='36' class='nline' style="text-align:right"> 主程序研发： </td>
-                        <td class='nline' style="text-align:left"><a href="http://www.desdev.cn/team.php" target="_blank" style="color:blue">织梦团队</a></td>
-                    </tr>
-                    <tr>
-                        <td height='36' class='nline' style="text-align:right">鸣谢：</td>
-                        <td class='nline' style="text-align:left"><a href="http://www.desdev.cn/dedecms-thanks.html" target="_blank" style="color:blue">热心用户</a>、<a href="http://www.dedecms.com/thanks.html" target="_blank" style="color:blue">赞助商</a></td>
-                    </tr>
-                </table>
-            </dd>
-        </dl><!--开发团队结束-->
-    </div><!--左侧结束-->
-    <div class="column" id="column2" ><!-- //右边的快捷消息开始 -->
-        <dl class='dbox' id="item8">
-            <dt class='lside'><div class='l'>赞助商链接(<a href="http://ad.dedecms.com/ad/" target="_blank">说明</a>)</div></dt>
-            <dd>
-                <iframe name="showad" src="index_body.php?dopost=showad" frameborder="0" width="100%" id="showad" frameborder="0" scrolling="no"  marginheight="5"></iframe>
-            </dd>
-        </dl><!--赞助商链接结束-->
-        <dl class='dbox' id="item6">
-            <dt class='lside'><div class='l'>信息统计</div></dt>
-            <dd id='listCount'>
-                正在载入中...
-            </dd>
-        </dl><!--信息统计结束-->
-        <dl class='dbox' id="item7">
-            <dt class='lside'><div class='l'>最新文档</div></dt>
-            <dd id='listNews'>
-<?php
-    $query = "SELECT arc.id, arc.arcrank, arc.title, arc.channel, ch.editcon  FROM `#@__archives` arc
-            LEFT JOIN `#@__channeltype` ch ON ch.id = arc.channel
-             WHERE arc.arcrank<>-2 ORDER BY arc.id DESC LIMIT 0, 6 ";
-    $arcArr = array();
-    $dsql->Execute('m', $query);
-    while($row = $dsql->GetArray('m'))
-    {
-        $arcArr[] = $row;
-    }
-?>
-    <table width="100%" class="dboxtable">
-    <?php
-    if(count($arcArr) > 1)
-    {
-        foreach($arcArr as $row)
-        {
-            if(trim($row['editcon'])=='') {
-                $row['editcon'] = 'archives_edit.php';
-            }
-            $linkstr = "·<a href='{$row['editcon']}?aid={$row['id']}&channelid={$row['channel']}'>{$row['title']}</a>";
-            if($row['arcrank']==-1) $linkstr .= "<font color='red'>(未审核)</font>";
-        ?>
-        <tr>
-            <td class='nline'  style="text-align:left">
-                <?php echo $linkstr; ?>
-            </td>
-        </tr>
-        <?php
-        }
-    } else {
-    ?>
-        <tr>
-            <td class='nline'  style="text-align:left">
-                暂无新增内容
-            </td>
-        </tr>
-    <?php
-    }
-    ?>
-    </table>
-            </dd>
-        </dl><!--最新文档结束-->
     </div>
 </div>
 <br style='clear:both'/>
 <!-- //底部 -->
 <div align="center" class="footer">
-Copyright &copy; 2004-2011 <a href='http://www.dedecms.com' target='_blank'><u>DedeCMS</u></a>. 织梦科技 版权所有
+
 </div>
 
 <!--  下面是隐藏的项目  -->

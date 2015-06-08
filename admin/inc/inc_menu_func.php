@@ -80,7 +80,7 @@ function GetMenus($userrank,$topos='main')
                             $addico = $ctag2->GetAtt('addico');
                         }
                         else {
-                            $addico = 'images/gtk-sadd.png';
+                            $addico = 'images/gtk-sadd.gif';
                         }
                         
 //an add icos , small items use att ischannel='1' addico='ico' addalt='msg' linkadd=''

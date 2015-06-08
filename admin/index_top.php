@@ -17,3 +17,4 @@ else
 {
     include DedeInclude('templets/index_top2.htm');
 }
+

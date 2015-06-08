@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8 echo $cfg_soft_lang; ?>">
 <title>增加文章</title>
 <style type="text/css">
 <!--
@@ -155,27 +155,40 @@ function delAlbPicOld(picfile, pid){
 }
 -->
 </script>
+<style type="text/css">
+.np{
+	background:none;}
+
+.atitle_1{
+	color:#666;}
+	
+.color999{
+	color:#999;}
+</style>
 </head>
 <body topmargin="8">
   <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
     <tr>
-      <td width="60%" height="30"><IMG height=14 src="images/book1.gif" width=20>&nbsp;<a href="catalog_do.php?cid=<?php echo $cid?>&channelid=<?php echo $channelid?>&dopost=listArchives"><u>文章列表</u></a> &gt;&gt; 发布文章</td>
+      <td width="60%" height="30" ><IMG src="images/book1.gif" >&nbsp;<a href="catalog_do.php?cid=<?php echo $cid?>&channelid=<?php echo $channelid?>&dopost=listArchives" style="color:#467A00; font-size:12px; font-weight:bold; text-decoration:underline;">文章列表</a> &gt;&nbsp;发布文章</td>
       <td width="30%" align='right'>&nbsp; <?php echo $backurl; ?><a href="catalog_main.php">[<u>栏目管理</u>]</a> </td>
     </tr>
   </table>
   
-  <table width="97%" border="0" align="center" cellpadding="0" cellspacing="0" id="head1">
+  <table width="97%" border="0" align="center" cellpadding="0" cellspacing="0" id="head1" style="border-bottom:1px solid #D6E1EB; margin-top:10px;;">
     <tr>
       <td colspan="2">
         <table width="800" border="0" cellpadding="0" cellspacing="0">
           <tr>
-            <td width="84" height="24" align="center" background="images/itemnote1.gif">&nbsp;常规信息&nbsp;</td>
-            <td><a href="#" onClick="ShowHide('getone')">　●输入网址采集单个网页&gt;&gt;</a></td>
+            <td width="94" height="27" align="center" style="color:#365470; font-weight:bold; font-size:12px; font-weight: normal; color:#fff;  background:url(images/bbaa.jpg);" >&nbsp;常规信息&nbsp;</td>
+            <td><a href="#" onClick="ShowHide('getone')">&nbsp;&nbsp;输入网址采集单个网页</a></td>
           </tr>
         </table>
       </td>
     </tr>
   </table>
+ 
+  
+  
 
 <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FBFCE2" id="getone" style="<?php if(empty($geturl)) echo 'display:none'; ?>">
   <form name="getonepage" action="article_add.php" method="get">
@@ -201,14 +214,14 @@ function delAlbPicOld(picfile, pid){
 <form name="form1" action="article_add.php" enctype="multipart/form-data" method="post" onSubmit="return checkSubmit()">
   <input type="hidden" name="channelid" value="<?php echo $channelid?>" />
   <input type="hidden" name="dopost" value="save" />
-  <table width="98%"  border="0" align="center" cellpadding="2" cellspacing="2" id="needset" style="border:1px solid #cfcfcf;background:#ffffff;">
+  <table width="98%"  border="0" align="center" cellpadding="2" cellspacing="2" id="needset"  style="margin-top:15px;background:#ffffff;">
     <tr>
-      <td height="24" colspan="5" class="bline">
+      <td height="30" colspan="5" class="bline">
       	<table width="800" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td width="90">&nbsp;文章标题：</td>
+            <td width="90" align="right" class="atitle_1">文章标题&nbsp;&nbsp;&nbsp;</td>
             <td width='408'><input name="title" type="text" id="title" value="<?php echo $title; ?>" style="width:388px" /></td>
-            <td width="90">&nbsp;简略标题：</td>
+            <td width="90" align="right" class="atitle_1">&nbsp;简略标题&nbsp;&nbsp;&nbsp;</td>
             <td>
             	<input name="shorttitle" type="text" id="shorttitle" style="width:150px" />
             </td>
@@ -216,10 +229,10 @@ function delAlbPicOld(picfile, pid){
         </table></td>
     </tr>
     <tr>
-      <td height="24" colspan="5" class="bline">
+      <td height="30" colspan="5" class="bline">
       	<table width="800" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td  width="90">&nbsp;自定义属性：</td>
+            <td  width="90" align="right" class="atitle_1">&nbsp;自定义属性&nbsp;&nbsp;&nbsp;</td>
             <td align="left">
             	<?php
             	$dsql->SetQuery("Select * From `#@__arcatt` order by sortid asc");
@@ -238,10 +251,10 @@ function delAlbPicOld(picfile, pid){
        </td>
     </tr>
     <tr>
-      <td height="24" colspan="5" class="bline" id="redirecturltr" style="display:none">
+      <td height="30" colspan="5" class="bline" id="redirecturltr" style="display:none">
 	   <table width="800" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td width="90">&nbsp;跳转网址：</td>
+            <td width="90">&nbsp;跳转网址</td>
             <td>
             	<input name="redirecturl" type="text" id="redirecturl" style="width:300px" value="" />
             </td>
@@ -250,22 +263,22 @@ function delAlbPicOld(picfile, pid){
        </td>
     </tr>
     <tr>
-      <td width="400%" height="24" colspan="2" class="bline">
+      <td width="400%" height="30" colspan="2" class="bline">
       	<table width="800" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td width="90">&nbsp;TAG标签：</td>
-          <td><input name="tags" type="text" id="tags" value="" style="width:300px" onChange="$Obj('keywords').value=this.value;" />(','号分开，单个标签小于12字节)</td>
-            <td width="47">权重：</td>
-            <td><input name="weight" type="text" id="weight" style="width:50px" value="<?php echo $maxWright['cc'];?>" />(越小越靠前)</td>
+          <td width="90" align="right" class="atitle_1">&nbsp;TAG标签&nbsp;&nbsp;&nbsp;</td>
+          <td><input name="tags" type="text" id="tags" value="" style="width:300px" onChange="$Obj('keywords').value=this.value;" />&nbsp;<span class="color999">(','号分开)</span></td>
+            <td width="47" align="right" class="atitle_1">权重&nbsp;&nbsp;&nbsp;</td>
+            <td><input name="weight" type="text" id="weight" style="width:50px" value="<?php echo $maxWright['cc'];?>" /><span class="color999">(越小越靠前)</span></td>
         </tr>
       </table>
       </td>
     </tr>
     <tr id="pictable">
-      <td height="24" colspan="5" class="bline">
+      <td height="30" colspan="5" class="bline">
       	<table width="800" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td width="90"> &nbsp;缩 略 图：</td>
+            <td width="90" align="right" class="atitle_1"> &nbsp;缩 略 图&nbsp;&nbsp;&nbsp;</td>
             <td width="560">
             	<table width="100%" border="0" cellspacing="1" cellpadding="1">
                 <tr>
@@ -288,14 +301,14 @@ function delAlbPicOld(picfile, pid){
         </table></td>
     </tr>
     <tr>
-      <td height="24" colspan="5" class="bline">
+      <td height="30" colspan="5" class="bline">
       	<table width="800" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td width="90">&nbsp;文章来源：</td>
+            <td width="90" align="right" class="atitle_1">&nbsp;文章来源&nbsp;&nbsp;&nbsp;</td>
             <td width="240">
             	<input name="source" type="text" id="source" style="width:160px" value="<?php echo $source; ?>" size="16"/>
               <input name="selsource" type="button" id="selsource" value="选择"></td>
-            <td width="90">作　者：</td>
+            <td width="90" align="right" class="atitle_1">作　者&nbsp;&nbsp;&nbsp;</td>
             <td>
             	<input name="writer" type="text" id="writer" style="width:120px" value="<?php echo $writer; ?>"/>
               <input name="selwriter" type="button" id="selwriter" value="选择"/>
@@ -305,10 +318,10 @@ function delAlbPicOld(picfile, pid){
         </td>
     </tr>
     <tr>
-      <td height="24" colspan="5" class="bline">
+      <td height="30" colspan="5" class="bline">
       	<table width="800" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td width="90">&nbsp;文章主栏目：</td>
+          <td width="90" align="right" class="atitle_1">&nbsp;文章主栏目&nbsp;&nbsp;&nbsp;</td>
           <td>
        <span id='typeidct'>
        <?php
@@ -337,10 +350,10 @@ function delAlbPicOld(picfile, pid){
       </table></td>
     </tr>
     <tr id='typeid2tr' style='display:none'>
-      <td height="24" colspan="5" class="bline">
+      <td height="30" colspan="5" class="bline">
       	<table width="800" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td width="90">&nbsp;文章副栏目：</td>
+          <td width="90" align="right" class="atitle_1">&nbsp;文章副栏目&nbsp;&nbsp;&nbsp;</td>
           <td>
           <span id='typeid2ct'></span><input type='text' name='typeid2' id='typeid2' value='' style='width:200px;' />
           <img src='images/menusearch2.gif' style='cursor:pointer;' onClick="ShowCatMap(event, this, <?php echo $channelid; ?>, 'typeid2')" alt='选择副栏目' title='选择副栏目' />
@@ -350,22 +363,22 @@ function delAlbPicOld(picfile, pid){
       </td>
     </tr>
     <tr>
-      <td height="24" colspan="5" class="bline">
+      <td height="30" colspan="5" class="bline">
       	<table width="800" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td width="90">&nbsp;关键字：</td>
+          <td width="90" align="right" class="atitle_1">&nbsp;关键字&nbsp;&nbsp;&nbsp;</td>
           <td width="448"><input type='text' name="keywords" id="keywords" style="width:80%" value="<?php echo $keywords; ?>" /><input type="button" name="Submit" value="浏览..." style="width:56;height:20" onClick="SelectKeywords('form1.keywords');" /></td>
           <td><input name="autokey" type="checkbox" onClick="ShowHide('keywords');"; class="np" id="autokey" value="1"<?php if($cfg_arc_autokeyword=='Y') echo ' checked="1" '; ?>/>
-自动获取，手动填写用","分开<br/>
+<span  style="color:#777;">自动获取，手动填写用","分开</span><br/>
 </td>
         </tr>
       </table></td>
     </tr>
     <tr>
-      <td height="24" colspan="5" class="bline">
+      <td height="30" colspan="5" class="bline">
       <table width="800" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td width="90">&nbsp;内容摘要：</td>
+          <td width="90" align="right" class="atitle_1">&nbsp;内容摘要&nbsp;&nbsp;&nbsp;</td>
           <td width="449"><textarea name="description" rows="5" id="description" style="width:80%;height:50px"><?php echo $description; ?></textarea></td>
           <td width="261">&nbsp;</td>
         </tr>
@@ -376,8 +389,8 @@ function delAlbPicOld(picfile, pid){
      <td colspan="2"><?php PrintAutoFieldsAdd($cInfos['fieldset'],'autofield'); ?></td>
    </tr>
     <tr>
-      <td height="28" colspan="2" bgcolor="#F9FCEF" class="bline2">
-      	<div style='float:left;line-height:28px;'>&nbsp;<strong>文章内容：</strong></div>
+      <td height="26" colspan="0" style="border-bottom:1px solid #D6E1EB;">
+      	<div style='float:left;color:#365470; font-weight:bold; font-size:12px; font-weight: normal; color:#fff;  background:url(images/bbaa.jpg); height:27px; width:94px; text-align:center; color:#fff; line-height:27px; margin-top:20px;'>文章内容</div>
       	<div style='float:right;;padding-right:8px'>
         	<img src="images/button_reset.gif" width="60" height="22" border="0" onClick="location.reload();" style="cursor:pointer; "/>
         </div>
@@ -387,28 +400,28 @@ function delAlbPicOld(picfile, pid){
       </td>
     </tr>
     <tr>
-      <td width="100%" height="24" colspan="2" class="bline">
+      <td width="100%" height="30" colspan="2" class="bline">
 	  <table width="800" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td width="90">&nbsp;附加选项：</td>
+            <td width="90" align="right" class="atitle_1">&nbsp;附加选项&nbsp;&nbsp;&nbsp;</td>
             <td>
             	<input name="remote" type="checkbox" class="np" id="remote" value="1"<?php if($cfg_rm_remote=='Y') echo ' checked="1" '; ?> />
-              下载远程图片和资源
+              <span class="color999">下载远程图片和资源</span>
               <input name="dellink" type="checkbox" class="np" id="dellink" value="1"<?php if($cfg_arc_dellink=='Y') echo ' checked="1" '; ?> />
-              删除非站内链接 <a href="javascript:OpenMyWin('article_allowurl_edit.php');">[设置]</a>
+              <span class="color999">删除非站内链接 </span><a href="javascript:OpenMyWin('article_allowurl_edit.php');">[设置]</a>
               <input name="autolitpic" type="checkbox" class="np" id="autolitpic" value="1"<?php if($cfg_arc_autopic=='Y') echo ' checked="1" '; ?> />
-              提取第一个图片为缩略图
+              <span class="color999">提取第一个图片为缩略图</span>
               <input type='checkbox' name='needwatermark' value='1' class='np' <?php if($photo_markup=='1') echo "checked"; ?> />
-              图片是否加水印
+              <span class="color999">图片是否加水印</span>
             </td>
           </tr>
         </table></td>
     </tr>
     <tr>
-      <td width="100%" height="24" colspan="2" class="bline">
+      <td width="100%" height="30" colspan="2" class="bline">
 	     <table width="800" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td width="90">&nbsp;分页方式：</td>
+            <td width="90" align="right" class="atitle_1">分页方式&nbsp;&nbsp;&nbsp;</td>
             <td>
             	<input name="sptype" type="radio" class="np" value="hand"<?php if($cfg_arcautosp=='N') echo " checked='1' "?>/>
               手动
@@ -436,54 +449,41 @@ function delAlbPicOld(picfile, pid){
       </div></td>
     </tr>
   </table>
-  <!-- //插入投票 -->
- <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0" id="head1" style="margin-top:10px;">
+
+  <!-- //高级参数 -->
+   <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0" id="head1" style="margin-top:10px; ">
     <tr>
       <td>
         <table border="0" cellpadding="0" cellspacing="0">
           <tr>
-            <td width="84" height="24" align="center" background="images/itemnote1.gif">&nbsp;<a href='javascript:ShowHideT("voteset")'><u>插入投票</u></a></td>
+            <td width="84" height="30" align="center">&nbsp;<a href='javascript:ShowHideT("adset")' style="color:#365470; font-weight:bold; font-size:12px; font-weight: normal; color:#fff;  background:url(images/bbaa.jpg); height:27px; width:94px; text-align:center; color:#fff; line-height:27px; display:block;">高级参数↑</a></td>
           </tr>
         </table>
       </td>
     </tr>
   </table>
-<table width="98%"  border="0" align="center" cellpadding="2" cellspacing="2" id="voteset" style="border:1px solid #cfcfcf;background:#ffffff;">
+  <table width="98%"  border="0" align="center" cellpadding="2" cellspacing="2" id="adset" style="background:#ffffff; padding:20px 0; border:1px solid #ddd;">
   <tr>
    <td height="30">
       <table width="800" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td width="90" height="22">&nbsp;投票：</td>
+          <td width="90" height="22" align="right" class="atitle_1">&nbsp;投票&nbsp;&nbsp;&nbsp;</td>
           <td><input type="text" name="voteid" id="voteid" /> <input name="selvote" type="button" id="selvote" value="选择投票" onClick="selectVote()" /> <input name="addvote" type="button" id="addvote" value="新增投票" onclick="addVote()" /> <input type="button" name="viewvote" id="viewvote" value="查看投票" onclick="viewVote()" /></td>
           </tr>
       </table>
     </td>
   </tr>
-  </table>
-  <!-- //高级参数 -->
-   <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0" id="head1" style="margin-top:10px;">
-    <tr>
-      <td>
-        <table border="0" cellpadding="0" cellspacing="0">
-          <tr>
-            <td width="84" height="24" align="center" background="images/itemnote1.gif">&nbsp;<a href='javascript:ShowHideT("adset")'><u>高级参数↑</u></a></td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-  <table width="98%"  border="0" align="center" cellpadding="2" cellspacing="2" id="adset" style="border:1px solid #cfcfcf;background:#ffffff;">
   <tr>
-   <td height="24" colspan="4" class="bline">
+   <td height="30" colspan="4" class="bline">
       <table width="800" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td width="90" height="22">&nbsp;评论选项：</td>
+          <td width="90" height="22" align="right" class="atitle_1">&nbsp;评论选项&nbsp;&nbsp;&nbsp;</td>
           <td width="240">
           <input type='radio' name='notpost' class='np' value='0' <?php if($cfg_feedback_forbid=='N') echo "checked='1' "; ?> />允许评论
           &nbsp;
           <input type='radio' name='notpost' class='np' value='1' <?php if($cfg_feedback_forbid=='Y') echo "checked='1' "; ?> />禁止评论
           </td>
-          <td width="90">浏览次数：</td>
+          <td width="90" align="right" class="atitle_1">浏览次数&nbsp;&nbsp;&nbsp;</td>
           <td>
           	<input type='text' name='click' value='<?php echo ($cfg_arc_click=='-1' ? mt_rand(50, 200) : $cfg_arc_click); ?>' style='width:100px;' />
           </td>
@@ -492,10 +492,10 @@ function delAlbPicOld(picfile, pid){
     </td>
   </tr>
   <tr>
-  <td height="24" colspan="4" class="bline">
+  <td height="30" colspan="4" class="bline">
       	<table width="800" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td width="90" height="22">&nbsp;文章排序：</td>
+            <td width="90" height="22" align="right" class="atitle_1" >&nbsp;文章排序&nbsp;&nbsp;&nbsp;</td>
             <td width="240">
             	<select name="sortup" id="sortup" style="width:150px">
                 <option value="0" selected>默认排序</option>
@@ -505,7 +505,7 @@ function delAlbPicOld(picfile, pid){
                 <option value="180">置顶半年</option>
                 <option value="360">置顶一年</option>
               </select> </td>
-            <td width="90">标题颜色：</td>
+            <td width="90" align="right" class="atitle_1">标题颜色&nbsp;&nbsp;&nbsp;</td>
             <td>
             	<input name="color" type="text" id="color" style="width:120px"/>
               <input name="modcolor" type="button" id="modcolor" value="选取" onClick="ShowColor(event,this)" />
@@ -514,10 +514,10 @@ function delAlbPicOld(picfile, pid){
         </table></td>
     </tr>
     <tr>
-      <td height="24" colspan="4" class="bline">
+      <td height="30" colspan="4" class="bline">
       	<table width="800" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td width="90">&nbsp;阅读权限：</td>
+            <td width="90" align="right" class="atitle_1">&nbsp;阅读权限&nbsp;&nbsp;&nbsp;</td>
             <td width="240"> <select name="arcrank" id="arcrank" style="width:150px">
                 <?php
                 $urank = $cuserLogin->getUserRank();
@@ -529,7 +529,7 @@ function delAlbPicOld(picfile, pid){
                 }
               ?>
               </select> </td>
-            <td width="90">消费金币：</td>
+            <td width="90" align="right" class="atitle_1">消费金币&nbsp;&nbsp;&nbsp;</td>
             <td>
             	<input name="money" type="text" id="money" value="0" size="10"/>            	</td>
           </tr>
@@ -537,10 +537,10 @@ function delAlbPicOld(picfile, pid){
       </td>
     </tr>
     <tr>
-      <td height="24" colspan="4" class="bline">
+      <td height="30" colspan="4" class="bline">
       	<table width="800" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td width="90">&nbsp;发布时间：</td>
+          <td width="90" align="right" class="atitle_1">&nbsp;发布时间&nbsp;&nbsp;&nbsp;</td>
           <td width="241">
           	<?php
           $nowtime = GetDateTimeMk(time());
@@ -572,7 +572,7 @@ function delAlbPicOld(picfile, pid){
 						});
 					}
 				 </script>    </td>
-          <td width="90">发布选项：</td>
+          <td width="90" align="right" class="atitle_1">发布选项&nbsp;&nbsp;&nbsp;</td>
           <td width="379"><input name="ishtml" type="radio" class="np" value="1" checked="1" />
 生成HTML
   <input type="radio" name="ishtml" class="np" value="0"/>
@@ -581,17 +581,17 @@ function delAlbPicOld(picfile, pid){
       </table></td>
     </tr>
     <tr>
-      <td height="24" colspan="4">
+      <td height="30" colspan="4">
       <table width="800" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td width="109">&nbsp;自定义文件名：</td>
+          <td width="109" align="right" class="atitle_1">&nbsp;自定义文件名&nbsp;&nbsp;&nbsp;</td>
           <td width="351"><input type="text" name="filename" id="filename" />（不包括后缀名如.html等）</td>
           <td width="340">
           	<?php
   if(isset($cfg_tamplate_rand) && $cfg_tamplate_rand==1)
   {
   ?>
-  随机选择模板：
+  随机选择模板
   <select name='templet' id='templet' style='width:200px' size='1'>
   <?php
           $rndsel = mt_rand(1, count($cfg_tamplate_arr)) - 1;
@@ -614,11 +614,11 @@ function delAlbPicOld(picfile, pid){
       </td>
   </tr>
   </table>
-   <table width="98%" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#F9FCEF" style="border:1px solid #cfcfcf;border-top:none;">
+   <table width="98%" border="0" cellspacing="0" cellpadding="0" align="center" >
    <tr height="35">
     <td width="17%">&nbsp;</td>
-    <td width="83%"><input name="imageField" type="image" src="images/button_save.gif" width="60" height="22" class="np" border="0"  style="cursor:pointer;"/>
-       <img src="images/button_reset.gif" width="60" height="22" border="0" onClick="location.reload();" style="cursor:pointer; "/>
+    <td width="83%"><input name="imageField" type="image" src="images/button_save.gif"  class="np" border="0"  style="cursor:pointer;"/>
+       <img src="images/button_reset.gif"  border="0" onClick="location.reload();" style="cursor:pointer; "/>
     </td>
    </tr>
 </table>

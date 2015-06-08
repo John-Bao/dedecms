@@ -37,3 +37,4 @@ $dlist->SetParameter("bid", $bid);
 $dlist->SetTemplate(DEDEADMIN. '/templets/story_list_chapter.htm');
 $dlist->SetSource($query);
 $dlist->Display();
+

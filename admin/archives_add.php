@@ -92,7 +92,7 @@ else if($dopost=='save')
     $senddate = time();
     $sortrank = AddDay($pubdate,$sortup);
     $ismake = $ishtml == 0 ? -1 : 0;
-    $title = preg_replace("#\"#", '＂', $title);
+    $title = preg_replace("#\"#", '”', $title);
     $title = cn_substrR($title,$cfg_title_maxlen);
     $shorttitle = cn_substrR($shorttitle,36);
     $color =  cn_substrR($color,7);

@@ -42,3 +42,4 @@ while($row = $dsql->GetArray())
 $lastid = $row['id'];
 $msg = '';
 require_once(dirname(__FILE__). "/templets/story_add.htm");
+

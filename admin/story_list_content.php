@@ -47,3 +47,4 @@ $dlist->SetTemplate(DEDEADMIN. '/templets/story_list_content.htm');
 $dlist->SetSource($query);
 $dlist->Display();
 //ClearAllLink();
+

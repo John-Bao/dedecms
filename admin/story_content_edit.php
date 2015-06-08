@@ -53,3 +53,4 @@ while($row = $dsql->GetArray()){
 require_once DedeInclude('/templets/story_content_edit.htm');
 
 //ClearAllLink();
+

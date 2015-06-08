@@ -18,3 +18,4 @@ $keyword=empty($keyword)? "" : $keyword;
 $actsearch = new ActionSearch($keyword);
 $asresult = $actsearch->Search();
 include DedeInclude('templets/action_search.htm');
+

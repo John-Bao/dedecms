@@ -17,3 +17,4 @@ $str = trim($dhd->GetHtml());
 $dhd->Close();
 if($cfg_soft_lang=='utf-8') $str = gb2utf8($str);
 echo $str;
+

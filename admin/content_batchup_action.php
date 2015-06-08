@@ -178,7 +178,7 @@ else if($action=='move')
             $dsql->ExecuteNoneQuery("UPDATE `$addtable` SET typeid='$newtypeid' WHERE aid='{$row->id}' ");
         }
         if($rs) $tdd++;
-        //DelArc($row->id,true); //2011.07.06根据论坛反馈，修正使用批量文档维护后文档被移动到回收站(by:织梦的鱼)
+        //DelArc($row->id,true); //2011.07.06根据论坛反馈，修正使用批量文档维护后文档被移动到回收站(by:三石磊工作室的鱼)
     }
 
     if($tdd>0)
@@ -213,3 +213,4 @@ else if($action=='modddpic')
     ShowMsg("成功修正缩略图错误！","javascript:;");
     exit();
 }
+

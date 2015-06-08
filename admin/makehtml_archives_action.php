@@ -151,9 +151,9 @@ else
     {
         if($uptype=='') 
         {
-            ShowMsg("完成所有创建任务！，生成文件：$totalnum 总用时：{$ttime} 分钟。","javascript:;");
+            ShowMsg("<span style='color:#333;font-family:微软雅黑; '>完成所有创建任务！，生成文件：$totalnum 总用时：{$ttime} 分钟。","javascript:;</span>");
         } else {
-            ShowMsg("完成文档HTML更新任务，现在开始进行主页更新...","makehtml_all.php?action=make&step=3&uptype=$uptype&mkvalue=$mkvalue");
+            ShowMsg("<span style='color:#333;font-family:微软雅黑;font-size:12px; '>完成文档HTML更新任务，现在开始进行主页更新...</span>","makehtml_all.php?action=make&step=3&uptype=$uptype&mkvalue=$mkvalue");
         }
     }
 }

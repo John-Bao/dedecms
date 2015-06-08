@@ -36,7 +36,7 @@ else if($dopost=='delsel')
     if(empty($titles))
     {
         header("Content-Type: text/html; charset={$cfg_ver_lang}");
-    echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset={$cfg_ver_lang}\">\r\n";
+    echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n";
         echo "没有指定删除的文档！";
         exit();
     }

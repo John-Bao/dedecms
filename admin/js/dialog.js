@@ -130,3 +130,4 @@ function initDrag(e) {
 }   
 document.onmousedown = initDrag;   
 document.onmouseup = new Function("isdrag=false");  
+

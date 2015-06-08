@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8 echo $cfg_soft_lang; ?>">
 <title>栏目管理</title>
 <link href="css/base.css" rel="stylesheet" type="text/css">
 <script language="javascript" src="js/global.js"></script>
@@ -115,29 +115,30 @@ height:18px
   background-color: #F7FCDA
 }
 .nbline {border-bottom: 1px solid #d6d6d6; background-color:#FFFFFF; }
-.bline2 {border-bottom: 1px solid #d6d6d6; background-color:#F9FCEF; }
+.bline2 { background:#fff; border:none; border-bottom:1px solid #F2F2F2; }
 </style>
 </head>
 <body background='images/allbg.gif' leftmargin='8' topmargin='8' onLoad="ContextMenu.intializeContextMenu()">
-<table width="98%" border="0" cellpadding="3" cellspacing="1" bgcolor="#cfcfcf" align="center">
+<table width="98%" border="0" cellpadding="3" cellspacing="0" bgcolor="#cfcfcf" align="center">
 <tr>
-   <td height="28" background='images/tbg.gif' style="padding-left:10px;">
-   <div style="float:left">
-    	<strong>网站栏目管理 </strong>
+   <td height="28" style="padding-left:10px; background:#fff;  border-bottom:1px solid #eee;">
+   <div style="float:left;">
+    	<strong style="font-size:16px; color:#467A00;">网站栏目管理 </strong>
    </div>
    <div style="float:right;padding-right:6px;">
-   	<a href='catalog_add.php?listtype=all' class='np coolbg'>增加顶级栏目</a>
-    <a href='catalog_add.php?dopost=quick' class='np coolbg'>批量增加栏目</a>
-   	<a href="catalog_do.php?dopost=upcatcache" class='np coolbg'>更新栏目缓存</a>
-   	<a href="makehtml_list.php" class='np coolbg'>更新栏目HTML</a>
+   	<a href='catalog_add.php?listtype=all' class='np coolbg' style="background:url(images/inputbg3.gif) no-repeat; float:left;  display:block; margin-right:5px; width:80px; height:25px;color:#fff; text-align:center; border:none;">增加顶级栏目</a>
+    <a href='catalog_add.php?dopost=quick' class='np coolbg' style="background:url(images/inputbg3.gif) no-repeat; float:left;  display:block; margin-right:5px; width:80px; height:25px;color:#fff; text-align:center; border:none;">批量增加栏目</a>
+   	<a href="catalog_do.php?dopost=upcatcache" class='np coolbg' style="background:url(images/inputbg3.gif) no-repeat; float:left;  display:block; margin-right:5px; width:80px; height:25px;color:#fff; text-align:center; border:none;">更新栏目缓存</a>
+   	<a href="makehtml_list.php" class='np coolbg' style="background:url(images/inputbg3.gif) no-repeat; float:left;  display:block; width:80px; height:25px;color:#fff; text-align:center; border:none;">更新栏目</a>
    </a>
+   <div style="clear:both;"></div>
    </td>
 </tr>
 <tr>
     <td height="28" bgcolor="#ffffff">
     	<table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td width="51%">提示：可使用右键菜单进行操作。</td>
+          <td width="51%" style="color:#888;">提示：可使用右键菜单进行操作。</td>
           <td width="49%" align="right">
           	<?php if(!isset($exallct)) { ?>
           	<a href='catalog_main.php?exallct=all'>[展开全部]</a>
@@ -166,7 +167,7 @@ $tu->ListAllType($userChannel,$opendir);
  <td height="36" bgcolor="#FFFFFF" align="center">
  <table width="98%" border="0" cellspacing="0" cellpadding="0">
    <tr>
-    <td align="right">
+    <td align="left">
 		  <input type="button" name="sb1" value="更新排序" style="width:70px" class="coolbt" onClick="document.form1.submit();" /> 
       <input type="button" name="sb4" value="获取JS" style="width:70px" class="coolbt" onClick="location='makehtml_js.php';" />
 		  <input type="button" name="sb2" value="更新栏目HTML" style="width:90px" class="coolbt" onClick="location='makehtml_list.php';" /> 

@@ -96,3 +96,4 @@ $win->AddTitle("成功修改一本图书：");
 $win->AddMsgItem($msg);
 $winform = $win->GetWindow("hand", "&nbsp;", false);
 $win->Display();
+

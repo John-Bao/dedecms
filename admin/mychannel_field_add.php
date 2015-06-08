@@ -148,3 +148,4 @@ foreach($fields as $k=>$v)
 }
 
 require_once(DEDEADMIN."/templets/mychannel_field_add.htm");
+

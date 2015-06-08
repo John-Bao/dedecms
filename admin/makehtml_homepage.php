@@ -45,7 +45,7 @@ else if($dopost=="make")
         $GLOBALS['_arclistEnv'] = 'index';
         $pv->SetTemplet($cfg_basedir.$cfg_templets_dir."/".$templet);
         $pv->SaveToHtml($homeFile);
-        echo "成功更新主页HTML：".$homeFile."<br /><a href='{$position}' target='_blank'>浏览...</a><br />";
+        echo "<span style='color:#333;font-family:微软雅黑; font-size:13px; '>成功更新主页HTML：".$homeFile."</span>&nbsp;&nbsp;<a href='{$position}' target='_blank' style='color:#ff0000;font-family:微软雅黑; '>浏览...</a><br />";
     } else { 
         // 动态浏览
         if (file_exists($homeFile)) @unlink($homeFile);

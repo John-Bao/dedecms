@@ -79,3 +79,4 @@ $win->AddTitle("成功发布一本图书：");
 $win->AddMsgItem($msg);
 $winform = $win->GetWindow("hand",  "&nbsp;", false);
 $win->Display();
+

@@ -209,3 +209,4 @@ if($action=='editload')
 exit();
 }
 require_once(dirname(__FILE__). "/templets/story_catalog.htm");
+

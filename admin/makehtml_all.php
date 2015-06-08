@@ -31,7 +31,7 @@ else if($action=='make')
         $starttime = GetMkTime($starttime);
         $mkvalue = ($uptype=='time' ? $starttime : $startid);
         OptimizeData($dsql);
-        ShowMsg("完成数据优化，现在开始更新文档！","makehtml_all.php?action=make&step=2&uptype=$uptype&mkvalue=$mkvalue");
+        ShowMsg("<span style='color:#333;font-family:微软雅黑;font-size:12px; '>完成数据优化，现在开始更新文档！</span>","makehtml_all.php?action=make&step=2&uptype=$uptype&mkvalue=$mkvalue");
         exit();
     }
     //更新文档
@@ -64,7 +64,7 @@ else if($action=='make')
 		} else {
 			if (file_exists($homeFile)) @unlink($homeFile);
 		}
-        ShowMsg("完成更新所有文档，现在开始更新栏目页！","makehtml_all.php?action=make&step=4&uptype=$uptype&mkvalue=$mkvalue");
+        ShowMsg("<span style='color:#333;font-family:微软雅黑;font-size:12px; '>完成更新所有文档，现在开始更新栏目页！</span>","makehtml_all.php?action=make&step=4&uptype=$uptype&mkvalue=$mkvalue");
         exit();
     }
     //更新栏目
@@ -79,7 +79,7 @@ else if($action=='make')
         $mkcachefile = DEDEDATA."/mkall_cache_{$adminID}.php";
         if($uptype=='all' || empty($mkvalue))
         {
-            ShowMsg("不需要进行初处理，现更新所有栏目！", "makehtml_list_action.php?gotype=mkallct");
+            ShowMsg("<span style='color:#333;font-family:微软雅黑;font-size:12px; '>不需要进行初处理，现更新所有栏目！</span>", "makehtml_list_action.php?gotype=mkallct");
             exit();
         }
         else
@@ -131,13 +131,13 @@ else if($action=='make')
             }
             fwrite($fp,"?".">");
             fclose($fp);
-            ShowMsg("完成栏目缓存处理，现转向更新栏目！","makehtml_list_action.php?gotype=mkall");
+            ShowMsg("<span style='color:#333;font-family:微软雅黑;font-size:12px; '>完成栏目缓存处理，现转向更新栏目！</span>","makehtml_list_action.php?gotype=mkall");
             exit();
         }
         else
         {
             fclose($fp);
-            ShowMsg("没有可更新的栏目，现在作最后数据优化！","makehtml_all.php?action=make&step=10");
+            ShowMsg("<span style='color:#333;font-family:微软雅黑;font-size:12px; '>没有可更新的栏目，现在作最后数据优化！</span>","makehtml_all.php?action=make&step=10");
             exit();
         }
     }
@@ -151,7 +151,7 @@ else if($action=='make')
         $mkcachefile = DEDEDATA."/mkall_cache_{$adminID}.php";
         @unlink($mkcachefile);
         OptimizeData($dsql);
-        ShowMsg("完成所有文件的更新！","javascript:;");
+        ShowMsg("<span style='color:#333;font-family:微软雅黑;font-size:12px; '>完成所有文件的更新！</span>","javascript:;");
         exit();
     }//make step
 

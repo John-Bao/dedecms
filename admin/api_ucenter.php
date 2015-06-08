@@ -104,7 +104,7 @@ class api_ucenter
 			'apptagtemplates[fields][pubdate]='.urlencode('时间').'&'.
 			'apptagtemplates[fields][url]='.urlencode('地址');
 			
-			$postdata = 'm=app&a=add&ucfounder=&ucfounderpw='.urlencode($uc_setings['authkey']).'&apptype=OTHER&appname='.urlencode($GLOBALS['cfg_webname']).'&appurl='.urlencode($GLOBALS['cfg_basehost']).'&appip=&appcharset=gbk&appdbcharset=gbk&'.$app_tagtemplates.'&release='.UC_CLIENT_RELEASE;
+			$postdata = 'm=app&a=add&ucfounder=&ucfounderpw='.urlencode($uc_setings['authkey']).'&apptype=OTHER&appname='.urlencode($GLOBALS['cfg_webname']).'&appurl='.urlencode($GLOBALS['cfg_basehost']).'&appip=&appcharset=utf-8&appdbcharset=utf-8&'.$app_tagtemplates.'&release='.UC_CLIENT_RELEASE;
 		
 			$ucconfig = api_fopen($uc_setings['ucapi'].'/index.php', 500, $postdata, '', 1, $uc_setings['ucip']);
 			

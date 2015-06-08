@@ -59,3 +59,4 @@ $bcatid = $bookinfos['bcatid'];
 $bookname = $bookinfos['bookname'];
 $booktype = $bookinfos['booktype'];
 require_once(DEDEADMIN. '/templets/story_add_content.htm');
+

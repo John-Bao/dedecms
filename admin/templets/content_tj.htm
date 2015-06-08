@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8 echo $cfg_soft_lang; ?>">
 <title>文档信息统计</title>
 <link href="css/base.css" rel="stylesheet" type="text/css">
 </head>
@@ -24,15 +24,15 @@
           <td><table width="300" border="0" cellpadding="1" cellspacing="1" bgcolor="#996666">
               <tr bgcolor="#FFFFFF"> 
                 <td width="140" bgcolor="#F3ECDA">&nbsp;文档总数：</td>
-                <td width="152">　［<?php echo $row1['dd']?>］</td>
+                <td width="152">　〔<?php echo $row1['dd']?>〕</td>
               </tr>
               <tr bgcolor="#FFFFFF"> 
                 <td bgcolor="#F3ECDA">&nbsp;评论总数：</td>
-                <td>　［<?php echo $row2['dd']?>］</td>
+                <td>　〔<?php echo $row2['dd']?>〕</td>
               </tr>
               <tr bgcolor="#FFFFFF"> 
                 <td bgcolor="#F3ECDA">&nbsp;会员总数：</td>
-                <td>　［<?php echo $row3['dd']?>］</td>
+                <td>　〔<?php echo $row3['dd']?>〕</td>
               </tr>
             </table></td>
         </tr>
@@ -58,7 +58,7 @@
               <tr align="center" bgcolor="#FFFFFF"> 
                 <td><?php echo $row->typename?></td>
                 <td>
-                ［<?php echo (isset($arcs[$row->id]) ? $arcs[$row->id] : 0 ); ?>］
+                〔<?php echo (isset($arcs[$row->id]) ? $arcs[$row->id] : 0 ); ?>〕
                 </td>
               </tr>
               <?php } ?>

@@ -92,3 +92,4 @@ $win->AddMsgItem($msg);
 $winform = $win->GetWindow("hand", "&nbsp;", false);
 $win->Display();
 //ClearAllLink();
+

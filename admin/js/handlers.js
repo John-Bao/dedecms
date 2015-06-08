@@ -262,3 +262,4 @@ FileProgress.prototype.toggleCancel = function (show, swfuploadInstance) {
 		};
 	}
 };
+

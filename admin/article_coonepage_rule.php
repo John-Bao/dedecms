@@ -128,3 +128,4 @@ $dlist = new DataListCP();
 $dlist->SetTemplate(DEDEADMIN."/templets/article_coonepage_rule.htm");
 $dlist->SetSource($sql);
 $dlist->Display();
+

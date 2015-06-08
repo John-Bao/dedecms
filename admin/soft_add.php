@@ -91,7 +91,7 @@ else if($dopost=='save')
     
     if(empty($click)) $click = ($cfg_arc_click=='-1' ? mt_rand(50, 200) : $cfg_arc_click);
 
-    $title = preg_replace('#"#', '＂', $title);
+    $title = preg_replace('#"#', '”', $title);
     $title = cn_substrR($title, $cfg_title_maxlen);
     $shorttitle = cn_substrR($shorttitle, 36);
     $color =  cn_substrR($color, 7);

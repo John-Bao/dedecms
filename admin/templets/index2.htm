@@ -2,8 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
-<title><?php echo $cfg_webname; ?>-<?php echo $cfg_softname." ".$cfg_version; ?></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8 echo $cfg_soft_lang; ?>">
+<title>后台管理</title>
 <link href="css/frame.css" rel="stylesheet" type="text/css" />
 <script src="../include/js/jquery/jquery.js" language="javascript" type="text/javascript"></script>
 <script src="js/frame.js" language="javascript" type="text/javascript"></script>
@@ -53,6 +53,8 @@
 #s4 div.sel {
     background: url("images/skinbutton.png") no-repeat scroll -14px -33px transparent;
 }
+
+
 </style>
 </head>
 <body class="showmenu">
@@ -68,68 +70,47 @@
 </div>
 <div class="head">
   <div class="top">
-    <div class="top_logo"> <img src="images/style<?php echo $cfg_admin_skin;?>/admin_top_logo.gif" width="200" height="37" alt="DedeCms Logo" title="Welcome use DedeCms" id="topdedelogo" /> </div>
+    <div class="top_logo" style="font-family:"微软雅黑";"> <a href="#" title="" onclick="JumpFrame('index_menu.php','index_body.php');"><img src="images/style<?php echo $cfg_admin_skin;?>/admin_top_logo.jpg" alt="DedeCms Logo" title="Welcome use DedeCms" id="topdedelogo"  border="0"/> </a></div>
     <div class="top_link">
       <ul>
-        <li class="welcome">您好：<?php echo $cuserLogin->getUserName(); ?> ，欢迎使用DedeCMS！</li>
-        <li><a href="index_menu.php" target="menu">主菜单</a></li>
-        <li><a href="#" onclick="JumpFrame('catalog_menu.php','public_guide.php');">内容发布</a></li>
-        <li><a href="#" onclick="JumpFrame('index_menu.php','content_list.php');">内容维护</a></li>
+        <li class="welcome">
+		您好：<a href="#" title="" onclick="JumpFrame('index_menu.php','sys_admin_user.php');"><?php echo $cuserLogin->getUserName(); ?></a>
+		<a href="exit.php" target="_top">[退出]</a>
+		<a href="#" onclick="JumpFrame('index_menu.php','sys_info.php');">[设置]</a></li>
+        <li><a href="index_menu.php" target="menu">左菜单</a></li>
         <li><a href="#" onclick="JumpFrame('index_menu.php','index_body.php');">系统主页</a></li>
-        <li><a href="../index.php?upcache=1" target="_blank">网站主页</a></li>
-        <li><a href="../member" target="_blank">会员中心</a></li>
-        <li><a href="exit.php" target="_top">注销</a></li>
+        <li><a href="../index.html" target="_blank" style="display:block; background:url(images/index.gif) no-repeat 5px top; padding-left:25px;">预览首页</a></li>
+		<li style="width:30px; height:15x;"></li>
+		<li><a href="#" onclick="JumpFrame('index_menu.php','makehtml_homepage.php');" style="color:#E1FEFF;">更新首页</a></li>
+		<li><a href="#" onclick="JumpFrame('index_menu.php','makehtml_list.php');" style="color:#E1FEFF;">更新栏目</a></li>
+		<li><a href="#" onclick="JumpFrame('index_menu.php','makehtml_archives.php');" style="color:#E1FEFF;">更新内容</a></li>
+		<li><a href="#" onclick="JumpFrame('index_menu.php','makehtml_all.php');" style="color:#E1FEFF;">一键更新</a></li>
+		<li><a href="#" onclick="JumpFrame('index_menu.php','sys_cache_up.php');" style="color:#E1FEFF;">更新缓存</a></li>
       </ul>
-      <div class="quick"> <a href="#" class="ac_qucikmenu" id="ac_qucikmenu">快捷方式</a> <a href="#" class="ac_qucikadd" id="ac_qucikadd">
+      
+  </div>
+  <div class="quick"> <a href="#" class="ac_qucikmenu" id="ac_qucikmenu">快捷管理</a> <a href="#" class="ac_qucikadd" id="ac_qucikadd">
         <!--ADD-->
         </a> </div>
     </div>
-  </div>
-  <div class="topnav">
-    <div class="menuact"> <a href="#" id="togglemenu">隐藏菜单</a>
-      <?php
-			if($cuserLogin->getUserType() >= 10) echo '<a href="#" id="allmenu">功能地图</a>';
-			?>
+ <!--<div class="topnav">
+    <div class="menuact">
+      	<a href="#" id="togglemenu">隐藏菜单</a>
     </div>
-    <div id="skin">
-        <div>
-          <ul id="skinlist">
-            <li id="s1">
-              <div<?php echo $cfg_admin_skin == 1? ' class="sel"' : '';?>><img alt="织梦绿" src="images/blank.gif"></div>
-            </li>
-            <li id="s2">
-              <div<?php echo $cfg_admin_skin == 2? ' class="sel"' : '';?>><img alt="淡蓝" src="images/blank.gif"></div>
-            </li>
-            <li id="s3">
-              <div<?php echo $cfg_admin_skin == 3? ' class="sel"' : '';?>><img alt="咖啡" src="images/blank.gif"></div>
-            </li>
-            <li id="s4">
-              <div<?php echo $cfg_admin_skin == 4? ' class="sel"' : '';?>><img alt="水墨" src="images/blank.gif"></div>
-            </li>
-          </ul>
-        </div>
-
-    </div>
+   
     <div class="nav" id="nav"> </div>
-    <div class="sysmsg">
-      <h3>滚动消息:</h3>
-      <div class="scroll">
-        <form action="action_search.php" target="main" method="post">
-          <input name="keyword" type="text" value="功能搜索" onfocus="if(this.value=='功能搜索'){this.value='';}"  onblur="if(this.value==''){this.value='功能搜索';}" class="allsearch" style="width:150px;"/>
-          <input name="" type="submit" value="搜索" class="np"/>
-          <a href='http://bbs.dedecms.com' target='_blank'>官方论坛</a> <a href='http://help.dedecms.com' target='_blank'>在线帮助</a>
-        </form>
-      </div>
-    </div>
-  </div>
+  </div>-->
 </div>
-<div class="left">
-  <div class="menu" id="menu">
+<div class="left"  >
+  <div class="menu" id="menu"> 
     <iframe src="index_menu.php" id="menufra" name="menu" frameborder="0"></iframe>
   </div>
 </div>
+
 <div class="right">
-  <div class="main">
+  <div class="main" >
+  	<div style="background:#eee; margin:0; padding:0;  height:3px; background:#fff url(images/abbbbb.jpg) no-repeat  left top; overflow:hidden;"></div>
+	<a href="#" id="togglemenu" style=" position:absolute; top:200px; overflow:hidden; font-size:12px; text-decoration:none; color:#3B6EA5; height:80px; left:0px; line-height:80px; display:block; width:13px; background:url(images/b1.jpg) no-repeat;"></a>
     <iframe id="main" name="main" frameborder="0" src="index_body.php"></iframe>
   </div>
   <!--<div id="help"><span id="content"><a href="#">栏目管理操作使用说明</a></span></div>-->
@@ -194,3 +175,4 @@ function JumpFrame(url1, url2){
 </script>
 </body>
 </html>
+

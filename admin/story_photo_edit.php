@@ -52,3 +52,4 @@ while($row = $dsql->GetArray())
     $chapnums[$row['id']] = $row['chapnum'];
 }
 require_once DedeInclude('/templets/story_photo_edit.htm');
+

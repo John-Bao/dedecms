@@ -134,7 +134,7 @@ if($nextpage >= $totalpage && $finishType)
     if($gotype=='')
     {
         if(empty($reurl)) { $reurl = '../plus/list.php?tid='.$tid; }
-        ShowMsg("完成所有栏目列表更新！<a href='$reurl' target='_blank'>浏览栏目</a>","javascript:;");
+        ShowMsg("<span style='color:#ff0000; font-family:微软雅黑; font-size:14px;'>完成所有栏目列表更新！</span><a href='$reurl' target='_blank' style='color:#111; font-family:微软雅黑; font-size:14px;'>浏览栏目</a>","javascript:;");
         exit();
     }
     else if($gotype=='mkall' || $gotype=='mkallct')
@@ -146,7 +146,7 @@ if($nextpage >= $totalpage && $finishType)
     if($finishType)
     {
         $gourl = "makehtml_list_action.php?gotype={$gotype}&uppage=$uppage&maxpagesize=$maxpagesize&typeid=$typeid&pageno=$nextpage&isremote={$isremote}&serviterm={$serviterm}";
-        ShowMsg("成功创建栏目：".$tid."，继续进行操作！",$gourl,0,100);
+        ShowMsg("<span style='color:#111; font-family:微软雅黑; font-size:14px;'>成功创建栏目：</span>".$tid."，继续进行操作！",$gourl,0,100);
         exit();
     } else {
         $gourl = "makehtml_list_action.php?gotype={$gotype}&uppage=$uppage&mkpage=$mkpage&maxpagesize=$maxpagesize&typeid=$typeid&pageno=$pageno&isremote={$isremote}&serviterm={$serviterm}";
