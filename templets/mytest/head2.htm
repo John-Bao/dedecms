@@ -1,0 +1,51 @@
+<div class="fwtop">
+<div class="fwtop_head">
+  <div class="fwtop_logo">
+    <div class="top_logo" id="top_logo">
+	<img src="{dede:global.cfg_templets_skin/}/images/logo.png" width="400" height="100" alt="网站Logo" title="test"/></div>
+
+  </div>
+  <div class="fwtop_info">
+    <div class="topSearch clear" id="topSearch">
+	<div class="search"><img src="{dede:global.cfg_templets_skin/}/images/dh.png" width="301" height="96" /></div>
+<script type="text/javascript">
+siteSearch()
+</script>
+<script type="text/javascript">
+	$("#siteSearchContent").focus(function(){
+		if (this.value == "请输入关键字..."){
+		this.value = ""
+		}
+	});
+	$("#siteSearchContent").blur(function(){
+		if (this.value == "") {
+		this.value = "请输入关键字...";
+		}
+	});
+</script>
+
+</div>
+
+  </div>
+  <div class="clear"></div>
+ </div>
+  <div class="fwtop_mainNav">
+    <div class="siteMainNav fwtop_nav fwnavlink" id="siteMainNav" >
+	<ul>
+		<li><a href='{dede:global.cfg_cmsurl/}/'><span>主页</span></a></li>
+      	{dede:channel type='top' row='10' currentstyle="<li class='hover'><a href='~typelink~' ~rel~><span>~typename~</span></a></li>"}
+      	<li><a href='[field:typeurl/]' [field:rel/]><span>[field:typename/]</span></a></li>
+      	{/dede:channel}
+	</ul>
+<div class="clear"></div>
+</div>
+  </div>
+  <div class="clear"></div>
+  <div class="fwtop_banner">
+    <script type="text/javascript">
+var ary = location.href.split("&");
+jQuery("#siteBanner").slide( { mainCell:"#bd ul", effect:"fold",autoPlay:"true",trigger:"mouseover",easing:"swing",delayTime:"1000",mouseOverStop:"true",pnLoop:"true"});
+</script>
+
+  </div>
+</div>

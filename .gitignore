@@ -10,6 +10,8 @@
 /website/config/admin.php
 /ydxs.iml
 /install
-/data/
-/a/
+/data
+/a
 /templates/
+/pagefile
+index.html

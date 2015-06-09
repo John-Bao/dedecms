@@ -1,13 +1,13 @@
 <?php
 $cfg_disable_funs = 'phpinfo,eval,exec,passthru,shell_exec,system,proc_open,popen,curl_exec,curl_multi_exec,parse_ini_file,show_source,file_put_contents';
 $cfg_disable_tags = 'php';
-$cfg_basehost = 'http://www.bldede.com';
+$cfg_basehost = 'http://baoldede.com';
 $cfg_cmspath = '';
-$cfg_cookie_encode = 'MWcCB2SyI644PLDTVWHvswOPFHW7TBms';
+$cfg_cookie_encode = 'p0isDyCLGedvHvw0Tbsge3AXKHTowdd';
 $cfg_indexurl = '/';
 $cfg_backup_dir = 'backupdata';
 $cfg_indexname = '主页';
-$cfg_webname = '阿呆的网站';
+$cfg_webname = '阿呆';
 $cfg_adminemail = 'admin@dedecms.com';
 $cfg_html_editor = 'ckeditor';
 $cfg_arcdir = '/a';
@@ -25,10 +25,10 @@ $cfg_replacestr = '她妈|它妈|他妈|你妈|去死|贱人';
 $cfg_feedbackcheck = 'N';
 $cfg_keyword_replace = 'Y';
 $cfg_fck_xhtml = 'N';
-$cfg_df_style = 'default';
+$cfg_df_style = 'mytest';
 $cfg_multi_site = 'N';
 $cfg_dede_log = 'N';
-$cfg_powerby = 'Copyright &copy; 2002-2011 DEDECMS. 织梦科技 版权所有';
+$cfg_powerby = '';
 $cfg_arcsptitle = 'N';
 $cfg_arcautosp = 'N';
 $cfg_arcautosp_size = 5;
@@ -101,8 +101,8 @@ $cfg_upload_switch = 'Y';
 $cfg_allsearch_limit = '1';
 $cfg_rewrite = 'N';
 $cfg_delete = 'Y';
-$cfg_keywords = '';
-$cfg_description = '';
+$cfg_keywords = '阿呆的站点';
+$cfg_description = '阿呆的个人站点';
 $cfg_beian = '';
 $cfg_need_typeid2 = 'Y';
 $cfg_cache_type = 'id';
@@ -154,4 +154,9 @@ $cfg_memcache_mc_oth = '';
 $cfg_cross_sectypeid = 'N';
 $cfg_digg_update = 0;
 $cfg_feedback_guest = 'N';
+$cfg_dbbq = '';
+$cfg_lxfs = '地 址：杭州市xxxxxx路xxx<br />
+号 电 话：0000-00000000<br />
+传 真：0000-00000000<br />
+邮 箱：138905022@qq.com';
 ?>
