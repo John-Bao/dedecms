@@ -49,64 +49,77 @@
     <ul>
     </ul>
   </div>
-  <span class="prev"></span> <span class="next"></span> </div>
+  <span class="prev"></span> <span class="next"></span> 
+</div>
 <script type="text/javascript">
-jQuery(".fullSlide").hover(function() {
-    jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
-},
-function() {
-    jQuery(this).find(".prev,.next").fadeOut()
-});
-jQuery(".fullSlide").slide({
-    titCell: ".hd ul",
-    mainCell: ".bd ul",
-    effect: "fold",
-    autoPlay: true,
-    autoPage: true,
-    trigger: "click",
-    startFun: function(i) {
-        var curLi = jQuery(".fullSlide .bd li").eq(i);
-        if ( !! curLi.attr("_src")) {
-            curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
-        }
-    }
-});
+	jQuery(".fullSlide").hover(function() {
+    	jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+	},
+	function() {
+    	jQuery(this).find(".prev,.next").fadeOut()
+	});
+	jQuery(".fullSlide").slide({
+	    titCell: ".hd ul",
+	    mainCell: ".bd ul",
+	    effect: "fold",
+	    autoPlay: true,
+	    autoPage: true,
+	    trigger: "click",
+	    startFun: function(i) {
+	        var curLi = jQuery(".fullSlide .bd li").eq(i);
+	        if ( !! curLi.attr("_src")) {
+	            curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+	        }
+	    }
+	});
 </script>
 <div style="margin:10px auto; width:1000px;">
 <div>
-<div class="inn1">
-<p><span><a href="/about/"><img src="{dede:global.cfg_templets_skin/}/images/more.jpg" border="0" /></a></span><strong>关于我们</strong></p>
-<div style="padding:10px;">
-<img src="{dede:global.cfg_templets_skin/}/images/20140220155815681568.jpg" />
-<br />
-郑州驿路计算机技术有限公司旗下模板分享平台爱淘站（www.aitaozhan.com）专注于提供网页模板及建站常用素材资源教程。通过整合团队专业的市场营销理念与网络技术为客户提供优质的网络营销服务。。</div>
-	 </div>
-<div class="inn2">
-<p><span><a href="/news/"><img src="{dede:global.cfg_templets_skin/}/images/more.jpg" alt="/news/" /></a></span><strong>新闻动态</strong></p>
-<div class="inn4">
-{dede:arclist row='6'titlelen='50'orderby='pubdate' typeid =3 channelid='1'}
-<li><span>[field:pubdate function='strftime("%m-%d",@me)'/]</span><a href="[field:arcurl/]">[field:title/]</a></li>
-{/dede:arclist}
-</div>
-</div>
-<div class="inn3">
-<p><span><a href="/lianxi/"><img src="{dede:global.cfg_templets_skin/}/images/more.jpg" border="0" /></a></span><strong>联系方式</strong></p>
-<div style="padding:10px; line-height:22px;">
-<img src="{dede:global.cfg_templets_skin/}/images/20140220154924552455.jpg" width="230" height="90" />
-{dede:global.cfg_lxfs/}</div>
-</div>
-<div style="clear:both"></div>
-</div>
-<div class="inn5">
-<p><span><a href="/chanpin/"><img src="{dede:global.cfg_templets_skin/}/images/more.jpg" border="0" /></a></span><strong>产品展示</strong></p>
-<ul>
-				{dede:arclist row='5'titlelen='30'orderby='pubdate' typeid =4 channelid='6'}
-<li><a href="[field:arcurl/]"><img src="[field:litpic/]" alt="" /></a><p><a href="[field:arcurl/]">[field:title/]</a></p></li>
-{/dede:arclist}	
+	<div class="inn1">
+		<p>
+			<span><a href="/about/"><img src="{dede:global.cfg_templets_skin/}/images/more.jpg" border="0" /></a></span>
+			<strong>关于我们</strong>
+		</p>
+		<div style="padding:10px;">
+			<img src="{dede:global.cfg_templets_skin/}/images/20140220155815681568.jpg" />
+			<br />
+			郑州驿路计算机技术有限公司旗下模板分享平台爱淘站（www.aitaozhan.com）专注于提供网页模板及建站常用素材资源教程。通过整合团队专业的市场营销理念与网络技术为客户提供优质的网络营销服务。。
+		</div>
+	</div>
+	<div class="inn2">
+		<p>
+			<span><a href="/news/"><img src="{dede:global.cfg_templets_skin/}/images/more.jpg" alt="/news/" /></a></span>
+			<strong>新闻动态</strong>
+		</p>
+		<div class="inn4">
+			{dede:arclist row='6'titlelen='50'orderby='pubdate' typeid =3 channelid='1'}
+				<li><span>[field:pubdate function='strftime("%m-%d",@me)'/]</span><a href="[field:arcurl/]">[field:title/]</a></li>
+			{/dede:arclist}
+		</div>
+	</div>
+	<div class="inn3">
+		<p>
+			<span><a href="/lianxi/"><img src="{dede:global.cfg_templets_skin/}/images/more.jpg" border="0" /></a></span>
+			<strong>联系方式</strong>
+		</p>
+		<div style="padding:10px; line-height:22px;">
+			<img src="{dede:global.cfg_templets_skin/}/images/20140220154924552455.jpg" width="230" height="90" />
+			{dede:global.cfg_lxfs/}
+		</div>
+		</div>
+		<div style="clear:both"></div>
+	</div>
+	<div class="inn5">
+		<p>
+			<span><a href="/chanpin/"><img src="{dede:global.cfg_templets_skin/}/images/more.jpg" border="0" /></a></span>
+			<strong>产品展示</strong>
+		</p>
+	<ul>
+		{dede:arclist row='5'titlelen='30'orderby='pubdate' typeid =4 channelid='6'}
+			<li><a href="[field:arcurl/]"><img src="[field:litpic/]" alt="" /></a><p><a href="[field:arcurl/]">[field:title/]</a></p></li>
+		{/dede:arclist}	
 	</ul>
-</div>
-
-
+	</div>
 </div>	
 <div class="clear"></div>
 {dede:include filename="footer.htm"/}
